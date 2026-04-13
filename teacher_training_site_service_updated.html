@@ -1,0 +1,3450 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>潔西卡｜老師培訓與線上課程轉型</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans TC', sans-serif;
+            background: #fff;
+            color: #1a1a1a;
+            font-size: 24px;
+            .reason-title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.reason-sub {
+  font-size: 18px;
+}
+        }
+
+        :root {
+            --ac: #D85A30;
+            --ac-light: #FAECE7;
+            --ac-mid: #F0997B;
+            --ac-dark: #712B13;
+            --bg: #fff;
+            --bg2: #f7f6f3;
+            --bg3: #f0ede8;
+            --text: #1a1a1a;
+            --text2: #5c5c5c;
+            --text3: #aaa;
+            --border: rgba(0, 0, 0, 0.1);
+            --border2: rgba(0, 0, 0, 0.2);
+            --r: 8px;
+            --rl: 12px;
+            --shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 32px;
+            height: 66px;
+            border-bottom: 0.5px solid var(--border);
+            background: var(--bg);
+            position: sticky;
+            top: 0;
+            z-index: 200;
+        }
+
+        .nav-logo {
+            font-size: 21px;
+            font-weight: 700;
+            color: var(--text);
+            cursor: pointer;
+        }
+
+        .nav-logo span {
+            color: var(--ac);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 26px;
+            align-items: center;
+        }
+
+        .nav-link {
+            font-size: 17px;
+            color: var(--text2);
+            cursor: pointer;
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+            transition: color 0.15s;
+        }
+
+        .nav-link:hover {
+            color: var(--ac);
+        }
+
+        .nav-link.active {
+            color: var(--ac);
+            border-bottom-color: var(--ac);
+            font-weight: 500;
+        }
+
+        .nav-cta {
+            font-size: 17px;
+            font-weight: 600;
+            padding: 9px 20px;
+            border-radius: var(--r);
+            background: var(--ac);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .nav-cta:hover {
+            opacity: 0.88;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 4px;
+            background: none;
+            border: none;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: var(--text);
+            border-radius: 2px;
+            display: block;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 66px;
+            left: 0;
+            right: 0;
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            z-index: 199;
+            flex-direction: column;
+            padding: 8px 0 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .mobile-menu.open {
+            display: flex;
+        }
+
+        .mobile-menu .mlink {
+            padding: 16px 28px;
+            font-size: 19px;
+            color: var(--text2);
+            cursor: pointer;
+            border-bottom: 0.5px solid var(--border);
+        }
+
+        .mobile-menu .mlink:hover {
+            color: var(--ac);
+            background: var(--bg2);
+        }
+
+        .mobile-menu .nav-cta {
+            margin: 16px 28px 0;
+            text-align: center;
+            display: block;
+        }
+
+        .seminar-testimonial-section {
+    background: #f7efeb;
+    padding: 80px 20px;
+}
+
+.seminar-testimonial-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.seminar-testimonial-title {
+    font-size: 44px;
+    font-weight: 800;
+    color: #5A2D1B;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.seminar-testimonial-sub {
+    font-size: 22px;
+    color: #9b4b24;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.seminar-testimonial-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 26px;
+}
+
+.seminar-testimonial-card {
+    background: #fff;
+    border: 1px solid #efb39f;
+    border-radius: 26px;
+    overflow: hidden;
+}
+
+.seminar-testimonial-header {
+    background: #f4e7e1;
+    padding: 26px 28px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    min-height: 132px;
+}
+
+.seminar-avatar-wrap {
+    width: 84px;
+    height: 84px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.seminar-avatar-wrap svg {
+    width: 84px;
+    height: 84px;
+    display: block;
+}
+
+.seminar-testimonial-name {
+    font-size: 22px;
+    font-weight: 800;
+    color: #6a301d;
+    line-height: 1.45;
+}
+
+.seminar-testimonial-body {
+    padding: 28px 28px 30px;
+}
+
+.seminar-result-badge {
+    display: inline-block;
+    background: #f3ddd3;
+    color: #d46a3f;
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1;
+    padding: 12px 18px;
+    border-radius: 999px;
+    margin-bottom: 22px;
+}
+
+.seminar-testimonial-desc {
+    font-size: 18px;
+    color: #7a3d24;
+    line-height: 2;
+}
+
+@media (max-width: 768px) {
+    .seminar-testimonial-section {
+        padding: 56px 20px;
+    }
+
+    .seminar-testimonial-title {
+        font-size: 32px;
+    }
+
+    .seminar-testimonial-sub {
+        font-size: 18px;
+        margin-bottom: 24px;
+    }
+
+    .seminar-testimonial-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .seminar-testimonial-header {
+        padding: 20px;
+        min-height: auto;
+    }
+
+    .seminar-avatar-wrap,
+    .seminar-avatar-wrap svg {
+        width: 72px;
+        height: 72px;
+    }
+
+    .seminar-testimonial-name {
+        font-size: 19px;
+    }
+
+    .seminar-testimonial-body {
+        padding: 22px 20px 24px;
+    }
+
+    .seminar-result-badge {
+        font-size: 14px;
+        padding: 10px 16px;
+        margin-bottom: 16px;
+    }
+
+    .seminar-testimonial-desc {
+        font-size: 16px;
+        line-height: 1.9;
+    }
+}
+
+        .btn {
+            display: inline-block;
+            padding: 13px 28px;
+            border-radius: var(--r);
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.15s;
+            text-decoration: none;
+        }
+
+        .btn-fill {
+            background: var(--ac);
+            color: #fff;
+        }
+
+        .btn-fill:hover {
+            opacity: 0.88;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--ac);
+            border: 1.5px solid var(--ac);
+        }
+
+        .btn-outline:hover {
+            background: var(--ac-light);
+        }
+
+        .btn-row {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 88px 24px 64px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 6px 16px;
+            border-radius: 20px;
+            background: var(--ac-light);
+            color: var(--ac-dark);
+            margin-bottom: 22px;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.22;
+            color: var(--text);
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            line-height: 1.8;
+            color: var(--text2);
+            max-width: 760px;
+            margin: 0 auto 36px;
+        }
+
+        .bio {
+            display: flex;
+            gap: 28px;
+            align-items: flex-start;
+            padding: 52px 40px;
+            background: var(--bg2);
+            border-top: 0.5px solid var(--border);
+        }
+
+        .bio-avatar {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            background: var(--ac-light);
+            color: var(--ac);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 34px;
+            font-weight: 700;
+            flex-shrink: 0;
+            border: 3px solid rgba(216, 90, 48, 0.15);
+        }
+
+        .bio-text h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+
+        .bio-text p {
+            font-size: 18px;
+            line-height: 1.85;
+            color: var(--text2);
+        }
+
+        .bio-link {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 17px;
+            color: var(--ac);
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .bio-link:hover {
+            text-decoration: underline;
+        }
+
+        .section,
+        .section-alt {
+            padding: 60px 40px;
+        }
+
+        .section {
+            background: var(--bg);
+        }
+
+        .section-alt {
+            background: var(--bg2);
+        }
+
+        .section-inner {
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        .section-sub {
+            max-width: 720px;
+            margin: -14px auto 32px;
+            text-align: center;
+            font-size: 17px;
+            line-height: 1.8;
+            color: var(--text2);
+        }
+
+        .fgrid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .fc {
+            background: var(--bg3);
+            border: 0.5px solid var(--border);
+            border-radius: var(--rl);
+            padding: 26px;
+            transition: transform 0.15s;
+        }
+
+        .fc:hover {
+            transform: translateY(-2px);
+        }
+
+        .section .fc {
+            background: var(--bg2);
+        }
+
+        .fc .ico {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        .fc h3 {
+            font-size: 19px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+
+        .fc p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text2);
+        }
+
+        .cta-sec {
+            text-align: center;
+            padding: 68px 24px;
+            background: var(--ac-light);
+            border-top: 0.5px solid var(--ac-mid);
+        }
+
+        .cta-sec h2 {
+            font-size: 30px;
+            font-weight: 700;
+            color: var(--ac-dark);
+            margin-bottom: 10px;
+        }
+
+        .cta-sec p {
+            font-size: 18px;
+            color: var(--ac-dark);
+            opacity: 0.72;
+            margin-bottom: 32px;
+        }
+
+        .footer {
+            padding: 28px 40px;
+            border-top: 0.5px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--bg);
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer p {
+            font-size: 15px;
+            color: var(--text3);
+        }
+
+        .flinks {
+            display: flex;
+            gap: 20px;
+        }
+
+        .flinks span {
+            font-size: 15px;
+            color: var(--text2);
+            cursor: pointer;
+        }
+
+        .flinks span:hover {
+            color: var(--ac);
+        }
+
+        .blog-hero {
+            padding: 52px 40px 32px;
+            background: var(--ac-light);
+            border-bottom: 0.5px solid var(--ac-mid);
+        }
+
+        .blog-hero h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--ac-dark);
+            margin-bottom: 6px;
+        }
+
+        .blog-hero p {
+            font-size: 18px;
+            color: var(--ac-dark);
+            opacity: 0.7;
+        }
+
+        .cat-bar {
+            display: flex;
+            gap: 8px;
+            padding: 18px 40px;
+            background: var(--bg);
+            border-bottom: 0.5px solid var(--border);
+            flex-wrap: wrap;
+        }
+
+        .cpill {
+            font-size: 15px;
+            padding: 6px 16px;
+            border-radius: 20px;
+            border: 0.5px solid var(--border2);
+            cursor: pointer;
+            background: transparent;
+            color: var(--text2);
+            transition: all 0.15s;
+        }
+
+        .cpill:hover {
+            border-color: var(--ac);
+            color: var(--ac);
+        }
+
+        .cpill.active {
+            background: var(--ac);
+            color: #fff;
+            border-color: var(--ac);
+        }
+
+        .agrid {
+            padding: 30px 40px;
+            background: var(--bg2);
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 18px;
+        }
+
+        .acard {
+            background: var(--bg);
+            border: 0.5px solid var(--border);
+            border-radius: var(--rl);
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.18s;
+            box-shadow: var(--shadow);
+        }
+
+        .acard:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .athumb {
+            height: 110px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+
+        .abody {
+            padding: 18px;
+        }
+
+        .abadge {
+            font-size: 13px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        .atitle {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .aexcerpt {
+            font-size: 15px;
+            color: var(--text2);
+            line-height: 1.65;
+            margin-bottom: 8px;
+        }
+
+        .adate {
+            font-size: 13px;
+            color: var(--text3);
+        }
+
+        .empty-blog {
+            text-align: center;
+            padding: 72px 16px;
+            color: var(--text3);
+            font-size: 18px;
+            grid-column: 1/-1;
+            line-height: 2;
+        }
+
+        .art-view {
+            display: none;
+        }
+
+        .art-view.active {
+            display: block;
+        }
+
+        .art-hdr {
+            padding: 36px 40px 28px;
+            border-bottom: 0.5px solid var(--border);
+            background: var(--bg);
+        }
+
+        .art-back {
+            font-size: 16px;
+            color: var(--ac);
+            cursor: pointer;
+            margin-bottom: 18px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: 600;
+        }
+
+        .art-back:hover {
+            text-decoration: underline;
+        }
+
+        .art-cat-badge {
+            font-size: 14px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-bottom: 14px;
+        }
+
+        .art-title {
+            font-size: 30px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .art-date {
+            font-size: 15px;
+            color: var(--text3);
+        }
+
+        .art-body {
+            padding: 36px 40px;
+            font-size: 19px;
+            line-height: 2;
+            color: var(--text2);
+            white-space: pre-wrap;
+            max-width: 760px;
+        }
+
+        .svc-hero {
+            padding: 60px 40px 44px;
+            text-align: center;
+            background: var(--ac-light);
+        }
+
+        .svc-hero h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--ac-dark);
+            margin-bottom: 12px;
+        }
+
+        .svc-hero p {
+            font-size: 19px;
+            color: var(--ac-dark);
+            opacity: 0.72;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .price-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 44px;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .pcard {
+            background: var(--bg);
+            border: 0.5px solid var(--border);
+            border-radius: var(--rl);
+            padding: 32px;
+            box-shadow: var(--shadow);
+        }
+
+        .pcard.featured {
+            border: 2px solid var(--ac);
+        }
+
+        .pbadge {
+            font-size: 13px;
+            font-weight: 700;
+            background: var(--ac-light);
+            color: var(--ac-dark);
+            padding: 4px 12px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-bottom: 14px;
+        }
+
+        .pcard h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+
+        .pcard .price {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--ac);
+            margin: 14px 0 5px;
+            line-height: 1.3;
+        }
+
+        .pcard .price span {
+            display: block;
+            font-size: 17px;
+            color: var(--text2);
+            font-weight: 400;
+            margin-top: 4px;
+        }
+
+        .pnote {
+            font-size: 15px;
+            color: var(--text3);
+            margin-top: 4px;
+            line-height: 1.7;
+        }
+
+        .pcard ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .pcard ul li {
+            font-size: 16px;
+            color: var(--text2);
+            padding: 8px 0;
+            border-bottom: 0.5px solid var(--border);
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            line-height: 1.7;
+        }
+
+        .pcard ul li::before {
+            content: "✓";
+            color: var(--ac);
+            font-size: 15px;
+            flex-shrink: 0;
+            font-weight: 700;
+            margin-top: 3px;
+        }
+
+        .about-wrap {
+            padding: 60px 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-wrap h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 28px;
+        }
+
+        .stat-row {
+            display: flex;
+            gap: 14px;
+            margin-bottom: 36px;
+            flex-wrap: wrap;
+        }
+
+        .stat-card {
+            flex: 1;
+            min-width: 150px;
+            background: var(--ac-light);
+            border-radius: var(--r);
+            padding: 22px;
+            text-align: center;
+        }
+
+        .stat-card .num {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--ac);
+        }
+
+        .stat-card .lbl {
+            font-size: 15px;
+            color: var(--ac-dark);
+            margin-top: 4px;
+            opacity: 0.8;
+        }
+
+        .wrap {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 2.5rem 0;
+        }
+
+        .label {
+            font-size: 13px;
+            font-weight: 500;
+            color: #888;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin: 0 0 1rem;
+        }
+
+        .hero-mini {
+            font-size: 28px;
+            font-weight: 500;
+            line-height: 1.4;
+            margin: 0 0 0.75rem;
+        }
+
+        .intro {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.8;
+            margin: 0 0 1.5rem;
+        }
+
+        .divider,
+        .section-divider {
+            border: none;
+            border-top: 1px solid #eee;
+        }
+
+        .divider {
+            margin: 0 0 1.5rem;
+        }
+
+        .section-divider {
+            margin: 1.25rem 0;
+        }
+
+        .essay-section {
+            margin-bottom: 1.25rem;
+        }
+
+        .essay-section h2 {
+            font-size: 19px;
+            font-weight: 500;
+            margin: 0 0 0.4rem;
+        }
+
+        .essay-section p {
+            font-size: 17px;
+            color: #555;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .belief {
+            border-left: 2px solid #ccc;
+            padding: 0.2rem 0 0.2rem 1.25rem;
+            margin-top: 1.5rem;
+        }
+
+        .belief p {
+            font-size: 17px;
+            line-height: 1.9;
+            margin: 0;
+            font-style: italic;
+            color: #555;
+        }
+
+        .testimonials {
+            padding: 80px 20px;
+        }
+
+        .testimonials .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .testimonials .title {
+            text-align: center;
+            font-size: 40px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .testimonials .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 50px;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .testimonial-card .img-box {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, #faece7, #f4d6c8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 52px;
+        }
+
+        .testimonial-card .card-content {
+            padding: 20px;
+        }
+
+        .testimonial-card .highlight {
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+
+        .testimonial-card .desc {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .testimonial-card .user {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .testimonial-card .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .testimonial-card .result {
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .testimonial-card .name {
+            font-size: 13px;
+            color: #777;
+        }
+
+        @media (max-width: 900px) {
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(max-width:768px) {
+            .nav {
+                padding: 0 16px;
+                height: 60px;
+            }
+
+            .nav-links,
+            .nav-cta {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .mobile-menu {
+                top: 60px;
+            }
+
+            .hero {
+                padding: 52px 20px 44px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .bio {
+                flex-direction: column;
+                padding: 36px 20px;
+                gap: 20px;
+            }
+
+            .section,
+            .section-alt {
+                padding: 44px 20px;
+            }
+
+            .fgrid,
+            .price-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-sec {
+                padding: 52px 20px;
+            }
+
+            .footer {
+                padding: 20px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .blog-hero {
+                padding: 40px 20px 24px;
+            }
+
+            .cat-bar {
+                padding: 14px 20px;
+            }
+
+            .agrid {
+                padding: 20px;
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .art-hdr {
+                padding: 28px 20px 20px;
+            }
+
+            .art-body {
+                padding: 28px 20px;
+                font-size: 17px;
+            }
+
+            .art-title {
+                font-size: 24px;
+            }
+
+            .svc-hero {
+                padding: 44px 20px 32px;
+            }
+
+            .about-wrap {
+                padding: 40px 20px;
+            }
+
+            #page-seminar h1 {
+                font-size: 34px !important;
+            }
+
+            #page-seminar h2 {
+                font-size: 28px !important;
+            }
+
+            #page-seminar p {
+                font-size: 18px !important;
+            }
+
+            #seminar-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        @media(max-width:480px) {
+            .hero h1 {
+                font-size: 26px;
+            }
+
+            .agrid {
+                grid-template-columns: 1fr;
+            }
+
+            .btn-row .btn {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+
+            .btn-row {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="nav">
+        <div class="nav-logo" onclick="goPage('home')">潔西卡<span>老師培訓</span></div>
+        <div class="nav-links">
+            <span class="nav-link active" id="nl-home" onclick="goPage('home')">首頁</span>
+            <span class="nav-link" id="nl-blog" onclick="goPage('blog')">精選文章</span>
+            <span class="nav-link" id="nl-service" onclick="goPage('service')">方案服務</span>
+            <span class="nav-link" id="nl-about" onclick="goPage('about')">關於我</span>
+            <span class="nav-link" id="nl-seminar" onclick="goPage('seminar')">免費講座</span>
+            <button class="nav-cta" onclick="goPage('service')">預約課前諮詢</button>
+        </div>
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mlink" onclick="goPage('home');toggleMenu()">首頁</div>
+        <div class="mlink" onclick="goPage('blog');toggleMenu()">精選文章</div>
+        <div class="mlink" onclick="goPage('service');toggleMenu()">方案服務</div>
+        <div class="mlink" onclick="goPage('about');toggleMenu()">關於我</div>
+        <div class="mlink" onclick="goPage('seminar');toggleMenu()">免費講座</div>
+        <button class="nav-cta" onclick="goPage('service');toggleMenu()">預約諮詢</button>
+    </div>
+
+    <div class="page active" id="page-home">
+        <div class="hero">
+            <div class="hero-tag">老師培訓・線上課程轉型</div>
+            <h1>幫助家教與補教老師<br>把教學能力變成可持續的線上事業</h1>
+            <p>不是只是教你錄課、經營帳號，而是帶你從定位、內容、產品、諮詢到成交，建立一套能真正賣出去、能持續擴張的老師品牌與線上課程系統。</p>
+            <div class="btn-row">
+                <button class="btn btn-fill" onclick="goPage('service')">查看培訓方案</button>
+                <button class="btn btn-outline" onclick="goPage('seminar')">先看免費講座</button>
+            </div>
+        </div>
+
+        <div class="bio">
+            <div class="bio-avatar">潔</div>
+            <div class="bio-text">
+                <h2>關於潔西卡</h2>
+                <p>我是潔西卡，從學科教學一路做到線上課程與教育品牌經營。過去我不只經營自己的數理教育事業，也開始協助更多家教老師、補教老師，從靠時數換收入，走向擁有自己的內容資產、可放大的課程產品與更穩定的成交系統。</p>
+                <span class="bio-link" onclick="goPage('about')">→ 了解更多我的教學理念與培訓方向</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-inner">
+                <div class="section-title">這個培訓，會幫你解決什麼問題</div>
+                <div class="section-sub">如果你會教，但不知道怎麼讓陌生人相信你、怎麼把服務設計成能成交的方案、怎麼把內容變成穩定詢問，這一區就是為你寫的。</div>
+                <div class="fgrid">
+                    <div class="fc">
+                        <div class="ico">🎯</div>
+                        <h3>重新做出能賣的定位</h3>
+                        <p>不是只寫「我教英文／我教數學」，而是幫你說清楚你服務誰、解決什麼問題、為什麼學生或家長要現在找你。</p>
+                    </div>
+                    <div class="fc">
+                        <div class="ico">🧩</div>
+                        <h3>把零散能力整理成產品</h3>
+                        <p>把你原本的一對一家教、補習班經驗、教材優勢、陪伴方式，整理成可以被理解、被購買的課程與服務方案。</p>
+                    </div>
+                    <div class="fc">
+                        <div class="ico">📱</div>
+                        <h3>內容不是發爽的，是拿來成交的</h3>
+                        <p>你會知道Threads、貼文、限動，分別要扮演什麼角色，不再只是一直發內容卻沒有穩定詢問，不露臉也沒關係</p>
+                    </div>
+                    <div class="fc">
+                        <div class="ico">💰</div>
+                        <h3>建立可持續的成交系統</h3>
+                        <p>從前端內容、免費資源、諮詢流程到後端升級，幫你建立不只賣一次，而是能長期經營的老師事業模型。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-alt">
+            <section class="testimonials">
+                <div class="container">
+                    <div class="title">適合這些正在轉型的老師</div>
+                    <div class="subtitle">你不一定缺努力，你可能只是缺一套正確順序</div>
+
+                    <div class="testimonial-grid">
+                        <div class="testimonial-card">
+                            <div class="img-box">📚</div>
+                            <div class="card-content">
+                                <div class="highlight">已經很會教，但收入卡在時數上限</div>
+                                <div class="desc">課排滿就很累，不排課就沒有收入，想把自己的教學能力變成更能放大的產品。</div>
+                                <div class="user">
+                                    <div class="avatar">1</div>
+                                    <div>
+                                        <div class="result">適合對象</div>
+                                        <div class="name">家教老師 / 小班老師</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card">
+                            <div class="img-box">🎥</div>
+                            <div class="card-content">
+                                <div class="highlight">想做線上課，但不知道先做什麼</div>
+                                <div class="desc">拍內容、錄課、做講義、研究平台，每件事都做一點，卻還是沒有真正把產品賣出去。</div>
+                                <div class="user">
+                                    <div class="avatar">2</div>
+                                    <div>
+                                        <div class="result">常見卡點</div>
+                                        <div class="name">方向很多，但沒有主線</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card">
+                            <div class="img-box">🚀</div>
+                            <div class="card-content">
+                                <div class="highlight">有粉絲或流量，但轉單不穩</div>
+                                <div class="desc">不是沒有曝光，而是不知道怎麼把信任累積成詢問，怎麼把詢問轉成高品質成交。</div>
+                                <div class="user">
+                                    <div class="avatar">3</div>
+                                    <div>
+                                        <div class="result">核心需求</div>
+                                        <div class="name">從內容走到成交</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div style="text-align:center;margin-top:24px">
+                <button class="btn btn-outline" onclick="goPage('service')">我想看完整方案</button>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-inner">
+                <div class="section-title">你會學到的核心主軸</div>
+                <div class="fgrid">
+                    <div class="fc">
+                        <div class="ico">①</div>
+                        <h3>商業定位與受眾選擇</h3>
+                        <p>找出最值得先切入的族群，避免一開始什麼都想教、什麼都想做，導致訊息無法聚焦。</p>
+                    </div>
+                    <div class="fc">
+                        <div class="ico">②</div>
+                        <h3>產品設計與定價邏輯</h3>
+                        <p>拆出單品課、續購方案、高支持方案，建立不只一次性收入，而是更穩定的結構。</p>
+                    </div>
+                    <div class="fc">
+                        <div class="ico">③</div>
+                        <h3>內容引流與信任建立</h3>
+                        <p>教你怎麼設計會讓對的人停下來的內容，不再把大量時間花在沒有轉換的發布上。</p>
+                    </div>
+                    <div class="fc">
+                        <div class="ico">④</div>
+                        <h3>諮詢成交與後端升級</h3>
+                        <p>讓詢問不是聊天，而是有邏輯地引導對方理解你的價值，並知道如何往更長期合作升級。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-alt">
+            <div class="section-inner">
+                <div class="section-title">最新精選文章</div>
+                <div id="home-recent" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px"></div>
+                <div style="text-align:center;margin-top:26px">
+                    <button class="btn btn-outline" onclick="goPage('blog')">看所有文章</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-sec">
+            <h2>你不用再一個人亂試</h2>
+            <p>先看方案，或直接預約課前諮詢，釐清你目前最卡的地方。</p>
+            <div class="btn-row">
+                <button class="btn btn-fill" onclick="goPage('service')">查看培訓方案</button>
+                <a href="https://lin.ee/y1YxSPG" target="_blank" class="btn btn-outline" style="border-color:#712B13;color:#712B13;text-align:center;">加入官方 Line</a>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div>
+                <p>潤智教育有限公司 © 2026 版權所有</p>
+                <p style="margin-top:4px;font-size:14px">jessica.math@gmail.com ｜ 教師培訓與線上課程轉型</p>
+            </div>
+            <div class="flinks">
+                <span onclick="goPage('service')">方案服務</span>
+                <span onclick="goPage('blog')">精選文章</span>
+                <span onclick="goPage('about')">關於我</span>
+            </div>
+        </footer>
+    </div>
+
+    <div class="page" id="page-blog">
+        <div id="blog-list">
+            <div class="blog-hero">
+                <h1>精選文章</h1>
+                <p>寫給想轉型線上課、建立個人品牌、做出穩定成交系統的老師</p>
+            </div>
+            <div class="cat-bar" id="cat-bar">
+                <button class="cpill active" onclick="filterCat('全部',this)">全部</button>
+            </div>
+            <div class="agrid" id="agrid">
+                <div class="empty-blog">📝<br><br>還沒有文章</div>
+            </div>
+        </div>
+
+        <div class="art-view" id="art-view">
+            <div class="art-hdr">
+                <span class="art-back" onclick="backBlog()">← 回到文章列表</span>
+                <div class="art-cat-badge" id="art-cat"></div>
+                <div class="art-title" id="art-title"></div>
+                <div class="art-date" id="art-date"></div>
+            </div>
+            <div class="art-body" id="art-body"></div>
+        </div>
+
+        <footer class="footer">
+            <div>
+                <p>潤智教育有限公司 © 2026</p>
+            </div>
+            <div class="flinks">
+                <span onclick="goPage('home')">首頁</span>
+                <span onclick="goPage('service')">方案服務</span>
+                <span onclick="goPage('about')">關於我</span>
+            </div>
+        </footer>
+    </div>
+
+    
+<div class="page" id="page-service">
+    <style>
+        #page-service {
+            background: #fff;
+            color: #4A1B0C;
+        }
+
+        #page-service * {
+            box-sizing: border-box;
+        }
+
+        #page-service .svc-nav-mini {
+            background: #fff;
+            border-bottom: 0.5px solid #F5C4B3;
+            padding: 18px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 66px;
+            z-index: 50;
+        }
+
+        #page-service .svc-nav-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: #4A1B0C;
+        }
+
+
+        #page-service .svc-nav-cta {
+            background: #D85A30;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 12px 22px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        #page-service .consult-copy {
+    text-align: left;
+    max-width: 820px;
+    margin: 0 auto 36px;
+    color: #712B13;
+    line-height: 1.95;
+}
+#page-service .testimonial-title-left {
+    text-align: left;
+    margin-bottom: 8px;
+}
+
+#page-service .testimonial-sub-left {
+    text-align: left;
+    margin-bottom: 34px;
+}
+
+#page-service .custom-testimonial-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 26px;
+    margin-top: 0;
+}
+
+#page-service .testimonial-card.v2 {
+    background: #fff;
+    border: 1px solid #efb39f;
+    border-radius: 26px;
+    overflow: hidden;
+    box-shadow: none;
+}
+
+#page-service .testimonial-card.v2 .testimonial-header {
+    background: #f4e7e1;
+    padding: 26px 28px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    min-height: 132px;
+}
+
+#page-service .testimonial-card.v2 .avatar-wrap {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    overflow: hidden;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#page-service .testimonial-card.v2 .avatar-wrap svg {
+    width: 84px;
+    height: 84px;
+    display: block;
+}
+
+#page-service .testimonial-card.v2 .testimonial-name {
+    font-size: 22px;
+    font-weight: 800;
+    color: #6a301d;
+    line-height: 1.45;
+}
+
+#page-service .testimonial-card.v2 .testimonial-body {
+    background: #fff;
+    padding: 28px 28px 30px;
+}
+
+#page-service .testimonial-card.v2 .result-badge {
+    display: inline-block;
+    background: #f3ddd3;
+    color: #d46a3f;
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1;
+    padding: 12px 18px;
+    border-radius: 999px;
+    margin-bottom: 22px;
+}
+
+#page-service .testimonial-card.v2 .testimonial-desc {
+    font-size: 18px;
+    color: #7a3d24;
+    line-height: 2;
+}
+
+@media (max-width: 768px) {
+    #page-service .custom-testimonial-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    #page-service .testimonial-card.v2 .testimonial-header {
+        padding: 20px;
+        min-height: auto;
+    }
+
+    #page-service .testimonial-card.v2 .avatar-wrap,
+    #page-service .testimonial-card.v2 .avatar-wrap svg {
+        width: 72px;
+        height: 72px;
+    }
+
+    #page-service .testimonial-card.v2 .testimonial-name {
+        font-size: 19px;
+    }
+
+    #page-service .testimonial-card.v2 .testimonial-body {
+        padding: 22px 20px 24px;
+    }
+
+    #page-service .testimonial-card.v2 .result-badge {
+        font-size: 14px;
+        padding: 10px 16px;
+        margin-bottom: 16px;
+    }
+
+    #page-service .testimonial-card.v2 .testimonial-desc {
+        font-size: 16px;
+        line-height: 1.9;
+    }
+}
+#page-service .consult-copy p {
+    font-size: 19px;
+    margin-bottom: 22px;
+}
+#page-service .consult-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+#page-service .consult-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+#page-service .consult-item .num {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #F5C4B3;
+    color: #712B13;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+#page-service .consult-copy .consult-title {
+    font-size: 22px;
+    font-weight: 800;
+    margin: 34px 0 14px;
+    color: #4A1B0C;
+}
+
+#page-service .consult-copy .consult-list p {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    #page-service .consult-copy p {
+        font-size: 17px;
+    }
+
+    #page-service .consult-copy .consult-title {
+        font-size: 20px;
+    }
+}
+
+        #page-service .svc-nav-cta:hover {
+            background: #993C1D;
+        }
+
+        #page-service .svc-section {
+            padding: 72px 24px;
+        }
+
+        #page-service .svc-inner {
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        #page-service .svc-tag {
+            background: #F5C4B3;
+            color: #712B13;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 6px 16px;
+            border-radius: 999px;
+            display: inline-block;
+            letter-spacing: 0.05em;
+            margin-bottom: 22px;
+        }
+
+        #page-service .svc-hero {
+            background: #FAECE7;
+            text-align: center;
+            border-bottom: 0.5px solid #F5C4B3;
+            padding: 88px 24px 72px;
+        }
+
+        #page-service .svc-hero h1 {
+            font-size: 52px;
+            font-weight: 800;
+            color: #4A1B0C;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        #page-service .svc-hero p {
+            font-size: 22px;
+            color: #712B13;
+            max-width: 620px;
+            margin: 0 auto 36px;
+            line-height: 1.85;
+        }
+
+        #page-service .hero-stats {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        #page-service .stat-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 18px 26px;
+            border: 1px solid #F0997B;
+            text-align: center;
+            min-width: 140px;
+        }
+
+        #page-service .stat-card .num {
+            font-size: 30px;
+            font-weight: 800;
+            color: #D85A30;
+        }
+
+        #page-service .stat-card .label {
+            font-size: 15px;
+            color: #993C1D;
+            margin-top: 6px;
+            line-height: 1.5;
+        }
+
+        #page-service .payment-section {
+            background: #fff;
+            border-bottom: 0.5px solid #F5C4B3;
+        }
+
+        #page-service .payment-box {
+            background: #FAECE7;
+            border-radius: 18px;
+            padding: 28px;
+            margin-top: 18px;
+        }
+
+        #page-service .payment-stages {
+            display: grid;
+    grid-template-columns: 1fr 1fr;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid #F0997B;
+            margin-bottom: 20px;
+        }
+
+        #page-service .stage {
+            flex: 1;
+            padding: 22px 14px;
+            text-align: center;
+            border-right: 1px solid #F0997B;
+        }
+
+        #page-service .stage:last-child {
+            border-right: none;
+        }
+
+        #page-service .stage.active {
+            background: #fff;
+        }
+
+        #page-service .stage.muted {
+            background: #FAECE7;
+        }
+
+        #page-service .stage-label {
+            font-size: 16px;
+            color: #993C1D;
+            margin-bottom: 8px;
+        }
+
+        #page-service .stage-amount {
+            font-size: 24px;
+            font-weight: 800;
+            color: #D85A30;
+        }
+
+        #page-service .stage-sub {
+            font-size: 14px;
+            color: #712B13;
+            margin-top: 8px;
+            line-height: 1.6;
+        }
+
+        #page-service .payment-note {
+            font-size: 18px;
+            color: #712B13;
+            text-align: center;
+            line-height: 1.9;
+        }
+
+        #page-service .section-title {
+            font-size: 34px;
+            font-weight: 800;
+            color: #4A1B0C;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        #page-service .section-sub {
+            font-size: 19px;
+            color: #712B13;
+            text-align: center;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        #page-service .reason-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        #page-service .reason-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            background: #FAECE7;
+            border-radius: 14px;
+            padding: 20px 20px;
+        }
+
+        #page-service .check-circle {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: #F5C4B3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        #page-service .reason-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #4A1B0C;
+            margin-bottom: 4px;
+            line-height: 1.5;
+        }
+
+        #page-service .reason-sub {
+            font-size: 18px;
+            color: #712B13;
+            line-height: 1.8;
+        }
+
+        #page-service .testimonial-section {
+            background: #FAECE7;
+            border-bottom: 0.5px solid #F5C4B3;
+        }
+
+        #page-service .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+            margin-top: 22px;
+        }
+
+        #page-service .testimonial-card {
+            background: #fff;
+            border-radius: 14px;
+            border: 1px solid #F0997B;
+            overflow: hidden;
+        }
+
+        #page-service .testimonial-img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            background: #F5C4B3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        #page-service .testimonial-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        #page-service .img-placeholder {
+            font-size: 14px;
+            color: #993C1D;
+            text-align: center;
+            padding: 12px;
+            line-height: 1.8;
+        }
+
+        #page-service .testimonial-body {
+            padding: 18px;
+        }
+
+        #page-service .testimonial-name {
+            font-size: 19px;
+            font-weight: 700;
+            color: #4A1B0C;
+            margin-bottom: 4px;
+        }
+
+        #page-service .testimonial-desc {
+            font-size: 16px;
+            color: #712B13;
+            line-height: 1.7;
+        }
+
+        #page-service .testimonial-cta {
+            background: #D85A30;
+            border-radius: 14px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px 16px;
+            text-align: center;
+            min-height: 220px;
+        }
+
+        #page-service .testimonial-cta .cta-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        #page-service .testimonial-cta .cta-sub {
+            font-size: 16px;
+            color: #FAECE7;
+            line-height: 1.7;
+        }
+
+        #page-service .cta-section {
+            background: #FAECE7;
+            text-align: center;
+        }
+
+        #page-service .cta-section p {
+            font-size: 19px;
+            color: #712B13;
+            line-height: 1.9;
+            margin: 12px 0 26px;
+        }
+
+        #page-service .main-btn {
+            background: #D85A30;
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            padding: 18px 36px;
+            font-size: 19px;
+            font-weight: 700;
+            cursor: pointer;
+            width: 100%;
+            max-width: 420px;
+            display: block;
+            margin: 0 auto;
+            text-decoration: none;
+        }
+
+        #page-service .main-btn:hover {
+            background: #993C1D;
+        }
+
+        #page-service .cta-note {
+            font-size: 14px;
+            color: #993C1D;
+            margin-top: 14px;
+            line-height: 1.7;
+        }
+
+        #page-service .svc-footer {
+            background: #4A1B0C;
+            color: #FAECE7;
+            text-align: center;
+            padding: 28px 20px;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            #page-service .svc-nav-mini {
+                top: 60px;
+                padding: 14px 16px;
+            }
+
+            #page-service .svc-nav-name {
+                font-size: 17px;
+            }
+
+            #page-service .svc-nav-cta {
+                font-size: 14px;
+                padding: 10px 16px;
+            }
+
+            #page-service .svc-hero {
+                padding: 56px 20px 48px;
+            }
+
+            #page-service .svc-hero h1 {
+                font-size: 38px;
+            }
+
+            #page-service .svc-hero p {
+                font-size: 18px;
+            }
+
+            #page-service .svc-section {
+                padding: 48px 20px;
+            }
+
+            #page-service .section-title {
+                font-size: 28px;
+            }
+
+            #page-service .section-sub,
+            #page-service .payment-note,
+            #page-service .reason-sub,
+            #page-service .cta-section p {
+                font-size: 17px;
+            }
+
+            #page-service .reason-title {
+                font-size: 20px;
+            }
+
+            #page-service .payment-stages {
+                flex-direction: column;
+            }
+
+            #page-service .stage {
+                border-right: none;
+                border-bottom: 1px solid #F0997B;
+            }
+
+            #page-service .stage:last-child {
+                border-bottom: none;
+            }
+
+            #page-service .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #page-service .svc-hero h1 {
+                font-size: 32px;
+            }
+
+            #page-service .svc-hero p {
+                font-size: 17px;
+            }
+
+            #page-service .stat-card {
+                min-width: 100%;
+            }
+
+            #page-service .reason-title {
+                font-size: 19px;
+            }
+
+            #page-service .reason-sub,
+            #page-service .testimonial-desc {
+                font-size: 16px;
+            }
+
+            #page-service .main-btn {
+                font-size: 17px;
+                padding: 16px 24px;
+            }
+        }
+    </style>
+
+    <div class="svc-nav-mini">
+        <span class="svc-nav-name">潔西卡｜老師培訓</span>
+        <a class="svc-nav-cta" href="#service-cta">預約免費諮詢</a>
+    </div>
+
+    <section class="svc-hero">
+        <div class="svc-inner">
+            <span class="svc-tag">30萬保證陪跑計畫</span>
+            <h1>你不是缺一堂課<br>你缺的是有人陪你走完</h1>
+            <p>從 0 到 30 萬線上課銷售額，1 對 1 全程陪跑。不是丟你一套課就結束，而是陪你把定位、內容、方案、諮詢與成交真的做出來。</p>
+
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <div class="num">30萬</div>
+                    <div class="label">保證銷售目標</div>
+                </div>
+                <div class="stat-card">
+                    <div class="num">1V1</div>
+                    <div class="label">從製作到銷售提供個人化專屬協助</div>
+                </div>
+                <div class="stat-card">
+                    <div class="num">無期限</div>
+                    <div class="label">陪你到賺滿30萬為止合約明確保障</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="svc-section payment-section">
+        <div class="svc-inner">
+            <div class="section-title">先開始賺錢，再付大部分費用</div>
+            <div class="section-sub">不是一次把風險都壓在你身上，而是讓你先啟動、先驗證、先成交。</div>
+
+            <div class="payment-box">
+                <div class="payment-stages">
+                    <div class="stage active">
+                        <div class="stage-label">現在</div>
+                        <div class="stage-amount">先付 1/3 費用(最多分六期)</div>
+                        <div class="stage-sub">即可正式開始陪跑，從0開始</div>
+                    </div>
+                    <div class="stage muted">
+                        <div class="stage-label">滿30萬銷售額後</div>
+                        <div class="stage-amount">再付 2/3 費用</div>
+                        <div class="stage-sub">確保已經賺到錢，再支付大部分費用</div>
+                    </div>
+                    
+                </div>
+
+                <p class="payment-note">
+                    先用少部分費用啟動，開始把你的專業變成真正能成交的線上教育系統。<br>
+                    等你真的賺到錢，再付剩下的費用。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="svc-section">
+        <div class="svc-inner">
+            <div class="section-title">為什麼這不是一般課程</div>
+            <div class="section-sub">你買的不是資訊，而是一套陪你走到結果的系統。</div>
+
+            <div class="reason-list">
+                <div class="reason-item">
+                    <div class="check-circle">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 8l3 3 7-7" stroke="#712B13" stroke-width="1.6" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="reason-title">大部分費用都是等你賺到30萬後才開始支付</div>
+                        <div class="reason-sub">不是你一個人承擔風險，而是我們一起對結果負責。這也是我對這套系統有信心的原因。</div>
+                    </div>
+                </div>
+
+                <div class="reason-item">
+                    <div class="check-circle">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 8l3 3 7-7" stroke="#712B13" stroke-width="1.6" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="reason-title">18個月內達標，免費升級 200 萬陪跑計畫</div>
+                        <div class="reason-sub">免費升級 200 萬陪跑計畫與永久商業顧問服務
+                        30 萬不是終點，而是代表你已經有一套能活下來的模式。接下來，我會陪你把它放大。
+</div>
+                    </div>
+                </div>
+                    
+
+                <div class="reason-item">
+                    <div class="check-circle">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 8l3 3 7-7" stroke="#712B13" stroke-width="1.6" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="reason-title">合約白紙黑字，沒有模糊地帶</div>
+                        <div class="reason-sub">每一個條件、每一階段付款、每一個升級機制都會講清楚。你知道你在買什麼，也知道你為什麼值得買。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="svc-section testimonial-section">
+        <div class="svc-inner">
+            <div class="section-title testimonial-title-left">學員見證</div>
+            <div class="section-sub testimonial-sub-left">這不是空談，是有人真的一步一步做出來的結果。</div>
+    
+            <div class="testimonial-grid custom-testimonial-grid">
+    
+                <div class="testimonial-card v2">
+                    <div class="testimonial-header">
+                        <div class="avatar-wrap">
+                            <svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="26" cy="26" r="26" fill="#f5ddd5" />
+                                <ellipse cx="26" cy="20" rx="10" ry="11" fill="#f5c4b3" />
+                                <ellipse cx="26" cy="13" rx="10" ry="6" fill="#5c2a1a" />
+                                <rect x="16" y="13" width="4" height="10" rx="2" fill="#5c2a1a" />
+                                <rect x="32" y="13" width="4" height="10" rx="2" fill="#5c2a1a" />
+                                <ellipse cx="26" cy="42" rx="13" ry="10" fill="#D85A30" />
+                                <ellipse cx="26" cy="32" rx="5" ry="3" fill="#f5c4b3" />
+                            </svg>
+                        </div>
+                        <div class="testimonial-name">補教十年以上經驗學員<br>（高中英文）</div>
+                    </div>
+                    <div class="testimonial-body">
+                        <div class="result-badge">陪跑後單月銷售額 27 萬</div>
+                        <div class="testimonial-desc">
+                            來找我之前已錄好課程，卻始終賣不動。曾花超過 20 萬跟多位老師學習，但因對方沒有學科類經營背景，執行起來總是卡關。加入陪跑後第三週重新設計課程方案，當月銷售額達到 27 萬。
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="testimonial-card v2">
+                    <div class="testimonial-header">
+                        <div class="avatar-wrap">
+                            <svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="26" cy="26" r="26" fill="#f5ddd5" />
+                                <ellipse cx="26" cy="20" rx="10" ry="11" fill="#f5c4b3" />
+                                <ellipse cx="26" cy="12" rx="11" ry="7" fill="#3d1a14" />
+                                <rect x="15" y="12" width="3.5" height="12" rx="1.75" fill="#3d1a14" />
+                                <rect x="33.5" y="12" width="3.5" height="12" rx="1.75" fill="#3d1a14" />
+                                <ellipse cx="26" cy="42" rx="13" ry="10" fill="#993c1d" />
+                                <ellipse cx="26" cy="32" rx="5" ry="3" fill="#f5c4b3" />
+                            </svg>
+                        </div>
+                        <div class="testimonial-name">大學還沒畢業的學員<br>（高中英文）</div>
+                    </div>
+                    <div class="testimonial-body">
+                        <div class="result-badge">銷售三個月破 22 萬</div>
+                        <div class="testimonial-desc">
+                            從零開始製作課程，期間還要同時準備研究所推甄和雅思考試。花了四個月完成課程後正式上架，三個月內銷售額突破 22 萬。第一年靠著不到四千粉絲的 Threads 帳號，就做到每月六位數收入。
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="testimonial-card v2">
+                    <div class="testimonial-header">
+                        <div class="avatar-wrap">
+                            <svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="26" cy="26" r="26" fill="#f5ddd5" />
+                                <ellipse cx="26" cy="20" rx="10" ry="11" fill="#f5c4b3" />
+                                <ellipse cx="26" cy="11" rx="10" ry="5.5" fill="#712b13" />
+                                <rect x="16" y="11" width="3" height="13" rx="1.5" fill="#712b13" />
+                                <rect x="33" y="11" width="3" height="13" rx="1.5" fill="#712b13" />
+                                <rect x="14" y="14" width="4" height="14" rx="2" fill="#712b13" />
+                                <rect x="34" y="14" width="4" height="14" rx="2" fill="#712b13" />
+                                <ellipse cx="26" cy="42" rx="13" ry="10" fill="#c0502a" />
+                                <ellipse cx="26" cy="32" rx="5" ry="3" fill="#f5c4b3" />
+                            </svg>
+                        </div>
+                        <div class="testimonial-name">命理老師<br>（仍屬於教學課程）</div>
+                    </div>
+                    <div class="testimonial-body">
+                        <div class="result-badge">四個月累積銷售額破 30 萬</div>
+                        <div class="testimonial-desc">
+                            堅持把課程優化到最完善，花了五個月才正式開賣。上市後四個月累積銷售額突破 30 萬。加入陪跑的初衷很明確——擺脫同行的低價競爭，只服務真正適合的優質客戶。
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="testimonial-card v2">
+                    <div class="testimonial-header">
+                        <div class="avatar-wrap">
+                            <svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="26" cy="26" r="26" fill="#f5ddd5" />
+                                <ellipse cx="26" cy="20" rx="10" ry="11" fill="#f5c4b3" />
+                                <ellipse cx="26" cy="12" rx="10" ry="5" fill="#3d1a14" />
+                                <rect x="16" y="12" width="20" height="6" rx="0" fill="#3d1a14" />
+                                <ellipse cx="15.5" cy="21" rx="2" ry="3" fill="#f5c4b3" />
+                                <ellipse cx="36.5" cy="21" rx="2" ry="3" fill="#f5c4b3" />
+                                <ellipse cx="26" cy="43" rx="14" ry="9" fill="#5c2a1a" />
+                                <polygon points="22,31 26,35 30,31" fill="#fff9f7" />
+                            </svg>
+                        </div>
+                        <div class="testimonial-name">直播與預錄兼顧學員<br>（國中數學）</div>
+                    </div>
+                    <div class="testimonial-body">
+                        <div class="result-badge">六個月銷售額約 15 萬</div>
+                        <div class="testimonial-desc">
+                            實體家教課排不開，先以線上段考直播課起步，同步錄製預錄課程。後來家中發生變故，需要全天照顧長輩，線下家教被迫全面暫停，近四個月無法主動招生——但線上收入依然持續進帳，六個月合計約 15 萬。
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+    <section class="svc-section cta-section" id="service-cta">
+        <div class="svc-inner">
+            <span class="svc-tag">想了解更多？</span>
+    
+            <div class="consult-copy"
+                style="text-align:left; max-width:820px; margin:0 auto 36px; color:#712B13; line-height:1.95;">
+                <p style="font-size:20px; margin-bottom:22px;">
+                    親愛的老師，您好
+                </p>
+    
+                <p style="font-size:19px; margin-bottom:22px;">
+                    在預約免費課前諮詢之前，想先讓您對這次諮詢的目的與流程有完整的了解，這樣我們都能把時間用在最有價值的地方。
+                </p>
+    
+                <p style="font-size:22px; font-weight:800; margin:34px 0 14px; color:#4A1B0C;">
+                    關於適合的對象
+                </p>
+    
+                <p style="font-size:19px; margin-bottom:22px;">
+                    這個陪跑服務歡迎各種學經歷背景的老師，但比較適合已經有一定教學經驗的夥伴。由於陪跑的重點是在市場定位與銷售策略上給予協助，並不包含所教科目的師資培訓，所以如果目前教學經驗還比較有限，或許現階段還不是最適合的時機，希望您能理解。
+                    
+                </p>
+                <p style="font-size:22px; font-weight:800; margin:34px 0 14px; color:#4A1B0C;">
+                    另外也想誠實說明一點
+                </p>
+                <p style="font-size:19px; margin-bottom:22px;">
+                    多數老師在起步時，並不習慣同時思考課程製作與長期商業經營這兩件事，因此前期光是錄製課程、調整思維方式，就需要一段時間的累積，快慢則因人而異，取決於你能投入多少時間開始累積
+                    所以如果您目前的期待是短期內就能產生大筆現金流，或是現有收入還沒有一點餘裕能支撐學習與初期投入，這個服務可能暫時還不是最適合您的選擇。這不是拒絕，而是希望在對的時機，我們才能真正一起走得長遠。
+                </p>
+    
+                <p style="font-size:22px; font-weight:800; margin:34px 0 14px; color:#4A1B0C;">
+                    這場諮詢是什麼？
+                </p>
+    
+                <p style="font-size:19px; margin-bottom:22px;">
+                    這是一場 45 分鐘的免費諮詢，目的是讓對付費陪跑有興趣的您，能夠更完整地評估我可以如何個人化地協助您的具體狀況。這不是免費課程，而是一個讓我們彼此更了解、看看是否適合一起合作的機會。
+                </p>
+    
+                <p style="font-size:19px; margin-bottom:14px;">
+                    諮詢的流程大致如下：
+                </p>
+    
+                <div class="consult-list">
+                    <div class="consult-item">
+                        <div class="num">1</div>
+                        <div>先一起討論您填寫的表單內容</div>
+                    </div>
+                
+                    <div class="consult-item">
+                        <div class="num">2</div>
+                        <div>帶入我的市場邏輯與銷售經驗，說明我能提供的協助方向</div>
+                    </div>
+                
+                    <div class="consult-item">
+                        <div class="num">3</div>
+                        <div>開放您自由提問與互動</div>
+                    </div>
+                
+                    <div class="consult-item">
+                        <div class="num">4</div>
+                        <div>最後介紹付費服務方案的內容與價格</div>
+                    </div>
+                </div>
+                <p style="font-size:22px; font-weight:800; margin:34px 0 14px; color:#4A1B0C;">
+                    最後想說的一段話
+                </p>
+    
+                <p style="font-size:19px; margin-bottom:0;">
+                    老師轉型培訓對我來說不只是一項服務，我真心希望來的每一位都是真正適合、也真正能從中獲益的夥伴。所以諮詢之後不報名完全沒關係，沒有任何壓力。唯一的小小期待是——不論最後是否報名，都能主動告知，以視尊重，謝謝您。
+                </p>
+    
+                <p style="font-size:19px; margin-top:22px; margin-bottom:0;">
+                    期待與您的相遇，我們諮詢時見！
+                </p>
+            </div>
+    
+            <a class="main-btn" href="https://calendly.com/d/cm89-rs9-jdg" target="_blank">預約免費諮詢</a>
+            <p class="cta-note">送出後不代表正式簽約，我們會先透過諮詢了解你的狀況與目標。</p>
+        </div>
+    </section>
+
+    <div class="svc-footer">
+        潤智教育有限公司 © 2025<br>
+        30 萬保證陪跑計畫
+    </div>
+</div>
+<div class="page" id="page-about">
+    <style>
+        #page-about {
+            background: #fff9f7;
+            color: #5c2a1a;
+        }
+
+        #page-about * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        #page-about .about-hero {
+            background: #3d1a14;
+            padding: 4.5rem 1.5rem 3.5rem;
+            text-align: center;
+        }
+
+        #page-about .about-hero-eyebrow {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            color: rgba(255, 255, 255, 0.45);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        #page-about .about-hero h1 {
+            font-family: 'Noto Serif TC', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.4;
+            margin-bottom: 0.75rem;
+        }
+
+        #page-about .about-hero h1 em {
+            color: #f0997b;
+            font-style: normal;
+        }
+
+        #page-about .about-hero-desc {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.68);
+            max-width: 620px;
+            margin: 0 auto;
+            line-height: 1.9;
+        }
+
+        #page-about .about-stat-strip {
+            background: #D85A30;
+            padding: 1.8rem 1.5rem;
+        }
+
+        #page-about .about-stat-strip-inner {
+            max-width: 980px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        #page-about .ss-item {
+            text-align: center;
+        }
+
+        #page-about .ss-item .n {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+            display: block;
+        }
+
+        #page-about .ss-item .l {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.72);
+            margin-top: 4px;
+            line-height: 1.5;
+        }
+
+        #page-about .about-wrap {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        #page-about .chapter {
+            padding: 4rem 0;
+            border-bottom: 1px solid #f5c4b3;
+        }
+
+        #page-about .chapter:last-of-type {
+            border-bottom: none;
+        }
+
+        #page-about .chapter-num {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            color: #c0502a;
+            text-transform: uppercase;
+            margin-bottom: 0.6rem;
+        }
+
+        #page-about .chapter-title {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #5c2a1a;
+            margin-bottom: 1.6rem;
+            line-height: 1.5;
+        }
+
+        #page-about .chapter p {
+            font-size: 18px;
+            color: #712b13;
+            line-height: 2;
+            margin-bottom: 1rem;
+        }
+
+        #page-about .chapter p:last-child {
+            margin-bottom: 0;
+        }
+
+        #page-about .pull-quote {
+            background: #faece7;
+            border-left: 4px solid #D85A30;
+            border-radius: 0 12px 12px 0;
+            padding: 1.4rem 1.5rem;
+            margin: 1.9rem 0;
+        }
+
+        #page-about .pull-quote p {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.1rem;
+            color: #712b13;
+            line-height: 1.9;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        #page-about .insight-list {
+            list-style: none;
+            margin: 1.4rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        #page-about .insight-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 18px;
+            color: #712b13;
+            line-height: 1.9;
+        }
+
+        #page-about .insight-list li::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #D85A30;
+            flex-shrink: 0;
+            margin-top: 12px;
+        }
+
+        #page-about .data-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin: 1.8rem 0;
+        }
+
+        #page-about .data-card {
+            background: #faece7;
+            border-radius: 12px;
+            padding: 1.2rem 1rem;
+            text-align: center;
+        }
+
+        #page-about .data-card .dn {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #D85A30;
+            display: block;
+        }
+
+        #page-about .data-card .dl {
+            font-size: 13px;
+            color: #993c1d;
+            margin-top: 4px;
+            line-height: 1.6;
+        }
+
+        #page-about .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin: 1.9rem 0;
+        }
+
+        #page-about .tl-item {
+            display: flex;
+            gap: 1rem;
+            position: relative;
+            padding-bottom: 1.6rem;
+        }
+
+        #page-about .tl-item:last-child {
+            padding-bottom: 0;
+        }
+
+        #page-about .tl-left {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 44px;
+            flex-shrink: 0;
+        }
+
+        #page-about .tl-dot {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #D85A30;
+            color: #fff;
+            font-size: 13px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        #page-about .tl-line {
+            width: 2px;
+            flex: 1;
+            background: #f5c4b3;
+            margin-top: 4px;
+        }
+
+        #page-about .tl-item:last-child .tl-line {
+            display: none;
+        }
+
+        #page-about .tl-body {
+            padding-top: 8px;
+        }
+
+        #page-about .tl-age {
+            font-size: 12px;
+            font-weight: 700;
+            color: #c0502a;
+            letter-spacing: 0.05em;
+            margin-bottom: 4px;
+        }
+
+        #page-about .tl-body h4 {
+            font-size: 19px;
+            font-weight: 700;
+            color: #5c2a1a;
+            margin-bottom: 5px;
+            line-height: 1.6;
+        }
+
+        #page-about .tl-body p {
+            font-size: 16px;
+            color: #993c1d;
+            line-height: 1.85;
+        }
+
+        #page-about .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 1.5rem;
+        }
+
+        #page-about .why-card {
+            background: #faece7;
+            border-radius: 12px;
+            padding: 1.2rem 1rem;
+        }
+
+        #page-about .why-card .wc-icon {
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        #page-about .why-card h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #712b13;
+            margin-bottom: 6px;
+        }
+
+        #page-about .why-card p {
+            font-size: 14px;
+            color: #993c1d;
+            line-height: 1.8;
+        }
+
+        #page-about .roi-section {
+            background: #3d1a14;
+            padding: 3.5rem 1.5rem;
+        }
+
+        #page-about .roi-inner {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        #page-about .roi-eyebrow {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            color: rgba(255, 255, 255, 0.4);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        #page-about .roi-title {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.8rem;
+        }
+
+        #page-about .roi-sub {
+            font-size: 17px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 2rem;
+            line-height: 1.9;
+        }
+
+        #page-about .roi-formula {
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(240, 153, 123, 0.25);
+            border-radius: 14px;
+            padding: 1.6rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        #page-about .formula-label {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.45);
+            margin-bottom: 0.8rem;
+        }
+
+        #page-about .formula-text {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #f0997b;
+            font-family: 'Noto Serif TC', serif;
+            line-height: 1.7;
+        }
+
+        #page-about .roi-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        #page-about .roi-card {
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(240, 153, 123, 0.2);
+            border-radius: 12px;
+            padding: 1.3rem 1.1rem;
+        }
+
+        #page-about .rc-invest {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.45);
+            margin-bottom: 6px;
+        }
+
+        #page-about .rc-num {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #f0997b;
+            display: block;
+            line-height: 1.2;
+        }
+
+        #page-about .rc-label {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.55);
+            margin-top: 4px;
+        }
+
+        #page-about .rc-calc {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.4);
+            margin-top: 8px;
+            font-family: monospace;
+            line-height: 1.7;
+        }
+
+        #page-about .roi-note {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.38);
+            text-align: center;
+            margin-top: 1.25rem;
+            line-height: 1.7;
+        }
+
+        #page-about .about-cta-section {
+            background: #D85A30;
+            padding: 3.5rem 1.5rem;
+            text-align: center;
+        }
+
+        #page-about .about-cta-inner {
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        #page-about .about-cta-inner h2 {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.6rem;
+            line-height: 1.5;
+        }
+
+        #page-about .about-cta-inner p {
+            font-size: 17px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.75rem;
+            line-height: 1.95;
+        }
+
+        #page-about .btn-cta {
+            display: block;
+            width: 100%;
+            padding: 1.1rem;
+            background: #fff;
+            color: #712b13;
+            font-size: 18px;
+            font-weight: 700;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-family: 'Noto Sans TC', sans-serif;
+            text-decoration: none;
+        }
+
+        #page-about .btn-cta:hover {
+            opacity: 0.92;
+        }
+
+        #page-about .cta-note {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.55);
+            margin-top: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+
+            #page-about .about-hero-desc,
+            #page-about .chapter p,
+            #page-about .insight-list li,
+            #page-about .roi-sub,
+            #page-about .about-cta-inner p {
+                font-size: 16px;
+            }
+
+            #page-about .chapter-title {
+                font-size: 1.65rem;
+            }
+
+            #page-about .data-row,
+            #page-about .roi-cards,
+            #page-about .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            #page-about .about-stat-strip-inner {
+                gap: 1.25rem;
+            }
+        }
+    </style>
+
+    <div class="about-hero">
+        <div class="about-hero-eyebrow">About Jessica</div>
+        <h1>我是 <em>Jessica</em><br>一個自己摸索出來的<br>線上教育創業者</h1>
+        <p class="about-hero-desc">沒有富裕家庭背景，沒有補教名師光環，也沒有任何人帶路——只有不斷試錯、投資自己，然後一步一步走到這裡。</p>
+    </div>
+
+    <div class="about-stat-strip">
+        <div class="about-stat-strip-inner">
+            <div class="ss-item"><span class="n">24 歲</span><span class="l">現在的年紀</span></div>
+            <div class="ss-item"><span class="n">500 萬</span><span class="l">去年銷售額</span></div>
+            <div class="ss-item"><span class="n">48 萬</span><span class="l">單月最高收入</span></div>
+            <div class="ss-item"><span class="n">零廣告</span><span class="l">純靠自媒體成交</span></div>
+            <div class="ss-item"><span class="n">一人團隊</span><span class="l">完全獨立創業</span></div>
+        </div>
+    </div>
+
+    <div class="about-wrap">
+        <div class="chapter">
+            <div class="chapter-num">Chapter 01</div>
+            <div class="chapter-title">19歲，每天跑家教，<br>時間和體力都快撐不住</div>
+
+            <p>我是 Jessica，父母都是普通上班族，對於「在網路上賣課程」這件事完全沒有概念，也沒辦法給我任何建議。</p>
+            <p>19 歲時，我每天跑 2 到 3 堂家教，月收入約四萬。看起來不差，但我的時間幾乎全被榨乾了——白天上課、晚上家教、回家之後還要備課。</p>
+            <p>我知道這樣下去不是辦法。靠時間換錢有上限，而我的時間已經快到極限了。</p>
+
+            <div class="timeline">
+                <div class="tl-item">
+                    <div class="tl-left">
+                        <div class="tl-dot">19</div>
+                        <div class="tl-line"></div>
+                    </div>
+                    <div class="tl-body">
+                        <div class="tl-age">19 歲</div>
+                        <h4>每天跑家教，月入約四萬</h4>
+                        <p>時間體力都快到極限，開始思考有沒有別的路。</p>
+                    </div>
+                </div>
+
+                <div class="tl-item">
+                    <div class="tl-left">
+                        <div class="tl-dot">20</div>
+                        <div class="tl-line"></div>
+                    </div>
+                    <div class="tl-body">
+                        <div class="tl-age">20 歲</div>
+                        <h4>開始經營「教國中數學的潔西卡」</h4>
+                        <p>粉絲達七千多，滿心期待地推出第一門線上課——結果收入不到八千元。</p>
+                    </div>
+                </div>
+
+                <div class="tl-item">
+                    <div class="tl-left">
+                        <div class="tl-dot">21</div>
+                        <div class="tl-line"></div>
+                    </div>
+                    <div class="tl-body">
+                        <div class="tl-age">21 歲前</div>
+                        <h4>年收突破百萬</h4>
+                        <p>投資自己學習銷售與系統化經營後，事業開始真正起飛。</p>
+                    </div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-left">
+                        <div class="tl-dot">22</div>
+                        <div class="tl-line"></div>
+                    </div>
+                    <div class="tl-body">
+                        <div class="tl-age">22</div>
+                        <h4>國中數裡線上課程銷售額近兩百五十萬</h4>
+                        <p>已累積口碑，養成穩丁商業決策能力，全靠字媒體銷售，無投廣告</p>
+                    </div>
+                </div>
+
+                <div class="tl-item">
+                    <div class="tl-left">
+                        <div class="tl-dot">23</div>
+                        <div class="tl-line"></div>
+                    </div>
+                    <div class="tl-body">
+                        <div class="tl-age">23 歲</div>
+                        <h4>年銷售額近五百萬</h4>
+                        <p>國中數理課程與老師培訓陪跑服務雙線並行</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="chapter">
+            <div class="chapter-num">Chapter 02</div>
+            <div class="chapter-title">第一門課，賺不到八千元</div>
+
+            <p>20 歲，我開始在 IG 認真經營「教國中數學的潔西卡」。累積到七千多粉絲時，我以為只要推出課程，就一定會有人買。</p>
+            <p>結果，第一次招生只有三個人報名，收入不到八千元。</p>
+            <p>我很失落。我每天發文、互動、熬夜備課，睡不到五小時，像機器人一樣運作。為了省錢，連早餐都不敢吃，每天花費限制在 150 元以內。</p>
+
+            <div class="pull-quote">
+                <p>「我以為粉絲多就會有人買課，價格低就會賣得好。結果完全不是這樣。我犯的錯，是把自己的假設當成事實。」</p>
+            </div>
+
+            <p>那段時間，我懷疑過自己——是不是沒人想看我的內容？是不是該放棄，畢業後老老實實當家教，賺月薪六萬就好？</p>
+            <p>半年過去，銷售還是不理想。半年沒有進展，我想放棄，又不甘心。</p>
+        </div>
+
+        <div class="chapter">
+            <div class="chapter-num">Chapter 03</div>
+            <div class="chapter-title">決定投資自己，一切開始不一樣</div>
+
+            <p>最後我做了一個決定：每年花 15 到 20 萬，認真學習線上教育的經營方式。</p>
+
+            <ul class="insight-list">
+                <li>如何設計讓人覺得值得的課程</li>
+                <li>如何提高課程單價，還有人願意付費</li>
+                <li>如何建立可以重複運作的銷售系統</li>
+            </ul>
+
+            <p>我不再只靠直覺經營，開始用更有系統的方式面對粉絲、學生和家長。</p>
+
+            <div class="data-row">
+                <div class="data-card"><span class="dn">6萬→</span><span class="dl">投資前每月最高收入</span></div>
+                <div class="data-card"><span class="dn">15萬+</span><span class="dl">學習後穩定月收</span></div>
+                <div class="data-card"><span class="dn">30萬+</span><span class="dl">現在</span></div>
+            </div>
+
+            <p>但這段路並不是一帆風順。前年 5 月，我的月收入突然從 15 萬暴跌到只剩 3 萬多。自媒體照常經營，互動也一樣做，報名卻雪崩式下滑。</p>
+            <p>我是一人團隊，沒有人可以討論，所有的不安都自己扛。那個月我失眠，常常到凌晨四點還睡不著。</p>
+
+            <div class="pull-quote">
+                <p>「正是那段最低潮，逼我找到了新的突破。我學會接受高峰與低谷都是人生的一部分，也學會回到初心——為什麼我當初開始做這件事？」</p>
+            </div>
+
+            <p>讀了《峰與谷》和《秘密》之後，我重新整理了自己的心態，不再只盯著業績，而是回歸教學本質。幾個月後，收入穩定回到 20 萬以上。</p>
+        </div>
+
+        <div class="chapter">
+            <div class="chapter-num">為什麼我能教你</div>
+            <div class="chapter-title">我真的走過那條路，<br>不是只會說理論</div>
+
+            <p>我沒有名師光環，沒有補教集團撐腰，也不是從有錢家庭出發的人。我試錯過、失眠過、想放棄過。</p>
+            <p>但我也真的從零做出了結果——然後把這套過程，整理成可以幫助你少走彎路的方法。</p>
+
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="wc-icon">🎓</div>
+                    <h4>學科型老師出身</h4>
+                    <p>我知道教課現場的感覺，也知道學科老師面對的是什麼樣的學生與家長市場。</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="wc-icon">📊</div>
+                    <h4>真實數字說話</h4>
+                    <p>前年線上課程銷售兩百多萬，去年含陪跑服務近五百萬，不是課本上的案例。</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="wc-icon">🔄</div>
+                    <h4>試錯過五種模式</h4>
+                    <p>從段考複習班到系統化課程，我嘗試了五種不同方向，才找到真正適合的路。</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="wc-icon">💡</div>
+                    <h4>付費學習改變思維</h4>
+                    <p>每年投入 15 到 20 萬學習，換來數倍的收入回報。這種「思維投資」的邏輯，我想傳給你。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="roi-section">
+        <div class="roi-inner">
+            <div class="roi-eyebrow">投資報酬率</div>
+            <div class="roi-title">付費學習的 ROI，我算給你看</div>
+            <div class="roi-sub">
+                很多人覺得學費「好貴」，但當你把它當成投資而不是消費，數字就完全不一樣了。<br>
+                我自己花了二、三十萬學習後，多賺回來的超過 120 萬。
+            </div>
+
+            <div class="roi-formula">
+                <div class="formula-label">ROI 計算公式</div>
+                <div class="formula-text">ROI =（最終收益 − 投入成本）÷ 投入成本 × 100%</div>
+            </div>
+
+            <div class="roi-cards">
+                <div class="roi-card">
+                    <div class="rc-invest">假設投入 20 萬</div>
+                    <span class="rc-num">500%</span>
+                    <div class="rc-label">投資報酬率</div>
+                    <div class="rc-calc">（120 − 20）÷ 20 × 100%<br>= 100 ÷ 20 × 100% = 500%</div>
+                </div>
+
+                <div class="roi-card">
+                    <div class="rc-invest">假設投入 30 萬</div>
+                    <span class="rc-num">300%</span>
+                    <div class="rc-label">投資報酬率</div>
+                    <div class="rc-calc">（120 − 30）÷ 30 × 100%<br>= 90 ÷ 30 × 100% = 300%</div>
+                </div>
+            </div>
+
+            <div class="roi-note">※ 120 萬為付費學習後多賺的估算金額，實際成果因人而異</div>
+        </div>
+    </div>
+
+    <div class="about-cta-section">
+        <div class="about-cta-inner">
+            <h2>準備好走不一樣的路了嗎？</h2>
+            <p>
+                你不需要像我一樣花那麼多時間摸索。<br>
+                我把走過的路、犯過的錯、學到的系統都整理好了。<br>
+                現在，你可以站在我走過的地方出發。
+            </p>
+            <a href="javascript:void(0)" class="btn-cta" onclick="goPage('service')">了解服務與預約培訓前諮詢 →</a>
+            
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div>
+            <p>潤智教育有限公司 © 2025</p>
+        </div>
+        <div class="flinks">
+            <span onclick="goPage('home')">首頁</span>
+            <span onclick="goPage('blog')">文章</span>
+            <span onclick="goPage('service')">方案服務</span>
+        </div>
+    </footer>
+</div>
+
+        <footer class="footer">
+            <div>
+                <p>潔西卡老師培訓 © 2026</p>
+            </div>
+            <div class="flinks">
+                <span onclick="goPage('home')">首頁</span>
+                <span onclick="goPage('blog')">文章</span>
+                <span onclick="goPage('service')">方案服務</span>
+            </div>
+        </footer>
+    </div>
+
+    <div class="page" id="page-seminar">
+        <section style="background:#EDE3DD;padding:100px 20px 80px;text-align:center;">
+            <div style="max-width:820px;margin:auto;">
+                <h1 style="font-size:46px;font-weight:800;color:#5A2D1B;line-height:1.35;margin-bottom:24px;">
+                    免費講座：老師如何從教學走向可持續的線上事業
+                </h1>
+
+                <p style="font-size:22px;line-height:1.9;color:#7A4A36;margin-bottom:48px;">
+                    給想做線上課程、建立個人品牌、突破時數收入限制的老師<br>
+                    幫你看懂真正影響變現的關鍵順序。
+                </p>
+
+                <a href="https://bmtech.live/f/jessicaedu" target="_blank" style="display:inline-block;background:#C7643B;color:#fff;font-size:24px;font-weight:700;padding:20px 52px;border-radius:18px;text-decoration:none;">
+                    立即報名免費講座
+                </a>
+            </div>
+        </section>
+        <section class="seminar-testimonial-section">
+            <div class="seminar-testimonial-inner">
+                <div class="seminar-testimonial-title">學員見證</div>
+                <div class="seminar-testimonial-sub">這不是空談，是有人真的一步一步做出來的結果。</div>
+        
+                <div class="seminar-testimonial-grid">
+        
+                    <div class="seminar-testimonial-card">
+                        <div class="seminar-testimonial-header">
+                            <div class="seminar-avatar-wrap">
+                                <svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="26" cy="26" r="26" fill="#f5ddd5" />
+                                    <ellipse cx="26" cy="20" rx="10" ry="11" fill="#f5c4b3" />
+                                    <ellipse cx="26" cy="13" rx="10" ry="6" fill="#5c2a1a" />
+                                    <rect x="16" y="13" width="4" height="10" rx="2" fill="#5c2a1a" />
+                                    <rect x="32" y="13" width="4" height="10" rx="2" fill="#5c2a1a" />
+                                    <ellipse cx="26" cy="42" rx="13" ry="10" fill="#D85A30" />
+                                    <ellipse cx="26" cy="32" rx="5" ry="3" fill="#f5c4b3" />
+                                </svg>
+                            </div>
+                            <div class="seminar-testimonial-name">補教十年以上經驗學員<br>（高中英文）</div>
+                        </div>
+                        <div class="seminar-testimonial-body">
+                            <div class="seminar-result-badge">陪跑後單月銷售額 27 萬</div>
+                            <div class="seminar-testimonial-desc">
+                                來找我之前已錄好課程，卻始終賣不動。曾花超過 20 萬跟多位老師學習，但因對方沒有學科類經營背景，執行起來總是卡關。加入陪跑後第三週重新設計課程方案，當月銷售額達到 27 萬。
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="seminar-testimonial-card">
+                        <div class="seminar-testimonial-header">
+                            <div class="seminar-avatar-wrap">
+                                <svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="26" cy="26" r="26" fill="#f5ddd5" />
+                                    <ellipse cx="26" cy="20" rx="10" ry="11" fill="#f5c4b3" />
+                                    <ellipse cx="26" cy="12" rx="11" ry="7" fill="#3d1a14" />
+                                    <rect x="15" y="12" width="3.5" height="12" rx="1.75" fill="#3d1a14" />
+                                    <rect x="33.5" y="12" width="3.5" height="12" rx="1.75" fill="#3d1a14" />
+                                    <ellipse cx="26" cy="42" rx="13" ry="10" fill="#993c1d" />
+                                    <ellipse cx="26" cy="32" rx="5" ry="3" fill="#f5c4b3" />
+                                </svg>
+                            </div>
+                            <div class="seminar-testimonial-name">大學還沒畢業的學員<br>（高中英文）</div>
+                        </div>
+                        <div class="seminar-testimonial-body">
+                            <div class="seminar-result-badge">銷售三個月破 22 萬</div>
+                            <div class="seminar-testimonial-desc">
+                                從零開始製作課程，期間還要同時準備研究所推甄和雅思考試。花了四個月完成課程後正式上架，三個月內銷售額突破 22 萬。第一年靠著不到四千粉絲的 Threads 帳號，就做到每月六位數收入。
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="seminar-testimonial-card">
+                        <div class="seminar-testimonial-header">
+                            <div class="seminar-avatar-wrap">
+                                <svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="26" cy="26" r="26" fill="#f5ddd5" />
+                                    <ellipse cx="26" cy="20" rx="10" ry="11" fill="#f5c4b3" />
+                                    <ellipse cx="26" cy="11" rx="10" ry="5.5" fill="#712b13" />
+                                    <rect x="16" y="11" width="3" height="13" rx="1.5" fill="#712b13" />
+                                    <rect x="33" y="11" width="3" height="13" rx="1.5" fill="#712b13" />
+                                    <rect x="14" y="14" width="4" height="14" rx="2" fill="#712b13" />
+                                    <rect x="34" y="14" width="4" height="14" rx="2" fill="#712b13" />
+                                    <ellipse cx="26" cy="42" rx="13" ry="10" fill="#c0502a" />
+                                    <ellipse cx="26" cy="32" rx="5" ry="3" fill="#f5c4b3" />
+                                </svg>
+                            </div>
+                            <div class="seminar-testimonial-name">命理老師<br>（仍屬於教學課程）</div>
+                        </div>
+                        <div class="seminar-testimonial-body">
+                            <div class="seminar-result-badge">四個月累積銷售額破 30 萬</div>
+                            <div class="seminar-testimonial-desc">
+                                堅持把課程優化到最完善，花了五個月才正式開賣。上市後四個月累積銷售額突破 30 萬。加入陪跑的初衷很明確——擺脫同行的低價競爭，只服務真正適合的優質客戶。
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="seminar-testimonial-card">
+                        <div class="seminar-testimonial-header">
+                            <div class="seminar-avatar-wrap">
+                                <svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="26" cy="26" r="26" fill="#f5ddd5" />
+                                    <ellipse cx="26" cy="20" rx="10" ry="11" fill="#f5c4b3" />
+                                    <ellipse cx="26" cy="12" rx="10" ry="5" fill="#3d1a14" />
+                                    <rect x="16" y="12" width="20" height="6" rx="0" fill="#3d1a14" />
+                                    <ellipse cx="15.5" cy="21" rx="2" ry="3" fill="#f5c4b3" />
+                                    <ellipse cx="36.5" cy="21" rx="2" ry="3" fill="#f5c4b3" />
+                                    <ellipse cx="26" cy="43" rx="14" ry="9" fill="#5c2a1a" />
+                                    <polygon points="22,31 26,35 30,31" fill="#fff9f7" />
+                                </svg>
+                            </div>
+                            <div class="seminar-testimonial-name">直播與預錄兼顧學員<br>（國中數學）</div>
+                        </div>
+                        <div class="seminar-testimonial-body">
+                            <div class="seminar-result-badge">六個月銷售額約 15 萬</div>
+                            <div class="seminar-testimonial-desc">
+                                實體家教課排不開，先以線上段考直播課起步，同步錄製預錄課程。後來家中發生變故，需要全天照顧長輩，線下家教被迫全面暫停，近四個月無法主動招生——但線上收入依然持續進帳，六個月合計約 15 萬。
+                            </div>
+                        </div>
+                    </div>
+        
+                </div>
+            </div>
+        </section>
+
+        <section style="padding:70px 20px;background:#fff;">
+            <div style="max-width:920px;margin:auto;">
+                <h2 style="text-align:center;font-size:32px;font-weight:800;margin-bottom:36px;color:#1a1a1a;">
+                    這場講座適合誰
+                </h2>
+
+                <div id="seminar-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+                    <div style="background:#f7f6f3;padding:28px;border-radius:14px;border:1px solid rgba(0,0,0,0.08);">
+                        <h3 style="font-size:22px;margin-bottom:12px;">時數排滿卻還是有天花板的老師</h3>
+                        <p style="font-size:17px;line-height:1.8;color:#5c5c5c;">你知道自己有能力，但也知道再這樣靠時間換收入，長期很難放大。</p>
+                    </div>
+
+                    <div style="background:#f7f6f3;padding:28px;border-radius:14px;border:1px solid rgba(0,0,0,0.08);">
+                        <h3 style="font-size:22px;margin-bottom:12px;">想做線上課卻一直停在想法階段的老師</h3>
+                        <p style="font-size:17px;line-height:1.8;color:#5c5c5c;">你做過一些研究，但越研究越亂，不知道最應該先開始哪一步。</p>
+                    </div>
+
+                    <div style="background:#f7f6f3;padding:28px;border-radius:14px;border:1px solid rgba(0,0,0,0.08);">
+                        <h3 style="font-size:22px;margin-bottom:12px;">有在發內容卻沒有穩定詢問的老師</h3>
+                        <p style="font-size:17px;line-height:1.8;color:#5c5c5c;">你並不是不努力，而是內容與產品、成交流程之間還沒有真正串起來。</p>
+                    </div>
+
+                    <div style="background:#f7f6f3;padding:28px;border-radius:14px;border:1px solid rgba(0,0,0,0.08);">
+                        <h3 style="font-size:22px;margin-bottom:12px;">想打造自己教育品牌的老師</h3>
+                        <p style="font-size:17px;line-height:1.8;color:#5c5c5c;">你不只是想多接幾個學生，而是想建立可累積、可升級、可持續經營的事業。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section style="background:#FAECE7;padding:80px 20px;text-align:center;">
+            <div style="max-width:760px;margin:auto;">
+                <h2 style="font-size:36px;font-weight:800;color:#5A2D1B;margin-bottom:20px;">
+                    先聽懂順序，再決定要不要加速
+                </h2>
+
+                <p style="font-size:20px;line-height:2;color:#7A4A36;margin-bottom:40px;">
+                    這場講座不只是講工具，<br>
+                    而是幫你搞清楚：定位、內容、產品、成交，<br>
+                    到底該先做什麼，為什麼很多老師一直努力卻做不出成果。
+                </p>
+
+                <a href="https://bmtech.live/f/jessicaedu" target="_blank" style="display:inline-block;background:#C7643B;color:#fff;font-size:22px;font-weight:700;padding:18px 46px;border-radius:18px;text-decoration:none;">
+                    報名免費講座
+                </a>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div>
+                <p>潤智教育有限公司 © 2026</p>
+            </div>
+            <div class="flinks">
+                <span onclick="goPage('home')">首頁</span>
+                <span onclick="goPage('blog')">文章</span>
+                <span onclick="goPage('service')">方案服務</span>
+                <span onclick="goPage('about')">關於我</span>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        let articles = [];
+        let activeFilter = '全部';
+
+        const catMeta = {
+            '老師轉型': { bg: '#FAECE7', accent: '#D85A30', dark: '#712B13', icon: '↗' },
+            '內容行銷': { bg: '#E1F5EE', accent: '#1D9E75', dark: '#085041', icon: '✦' },
+            '產品設計': { bg: '#FAEEDA', accent: '#BA7517', dark: '#633806', icon: '□' },
+            '成交諮詢': { bg: '#FBEAF0', accent: '#D4537E', dark: '#72243E', icon: '✓' },
+            '品牌定位': { bg: '#E6F1FB', accent: '#185FA5', dark: '#0C447C', icon: '◎' }
+        };
+
+        async function loadArticles() {
+            try {
+                const res = await fetch('./data/articles.json');
+                if (!res.ok) throw new Error('無法讀取 articles.json');
+
+                articles = await res.json();
+
+                articles = articles.map(a => ({
+                    ...a,
+                    date: formatDate(a.date)
+                }));
+
+                renderAll();
+            } catch (err) {
+                console.error('載入文章失敗：', err);
+                articles = [];
+                renderAll();
+            }
+        }
+
+        function formatDate(dateStr) {
+            if (!dateStr) return '';
+            const d = new Date(dateStr);
+            if (Number.isNaN(d.getTime())) return dateStr;
+            return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`;
+        }
+
+        function goPage(id) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+
+            const page = document.getElementById('page-' + id);
+            if (page) page.classList.add('active');
+
+            const nl = document.getElementById('nl-' + id);
+            if (nl) nl.classList.add('active');
+
+            if (id === 'blog') {
+                document.getElementById('blog-list').style.display = 'block';
+                document.getElementById('art-view').classList.remove('active');
+            }
+
+            window.scrollTo(0, 0);
+        }
+
+        function toggleMenu() {
+            document.getElementById('mobile-menu').classList.toggle('open');
+        }
+
+        document.addEventListener('click', function (e) {
+            const menu = document.getElementById('mobile-menu');
+            const hbg = document.getElementById('hamburger');
+            if (menu.classList.contains('open') && !menu.contains(e.target) && !hbg.contains(e.target)) {
+                menu.classList.remove('open');
+            }
+        });
+
+        function renderAll() {
+            renderCatBar();
+            renderGrid();
+            renderHomeRecent();
+        }
+
+        function renderCatBar() {
+            const cats = ['全部', ...new Set(articles.map(a => a.cat))];
+            document.getElementById('cat-bar').innerHTML = cats.map(c =>
+                `<button class="cpill${c === activeFilter ? ' active' : ''}" onclick="filterCat('${c}',this)">${c}</button>`
+            ).join('');
+        }
+
+        function filterCat(cat, el) {
+            activeFilter = cat;
+            document.querySelectorAll('.cpill').forEach(p => p.classList.remove('active'));
+            el.classList.add('active');
+            renderGrid();
+        }
+
+        function cardHTML(a, clickFn) {
+            const m = catMeta[a.cat] || { bg: '#F1EFE8', accent: '#5F5E5A', dark: '#2C2C2A', icon: '◆' };
+            return `
+                <div class="acard" onclick="${clickFn}">
+                    <div class="athumb" style="background:${m.bg};color:${m.accent}">${m.icon}</div>
+                    <div class="abody">
+                        <span class="abadge" style="background:${m.bg};color:${m.dark}">${a.cat}</span>
+                        <div class="atitle">${a.title}</div>
+                        <div class="aexcerpt">${a.excerpt || (a.body ? a.body.slice(0, 65) + '…' : '')}</div>
+                        <div class="adate">${a.date}</div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderGrid() {
+            const f = activeFilter === '全部' ? articles : articles.filter(a => a.cat === activeFilter);
+            const grid = document.getElementById('agrid');
+
+            grid.innerHTML = f.length
+                ? f.map(a => cardHTML(a, `openArticle(${a.id})`)).join('')
+                : `<div class="empty-blog">📝<br><br>${activeFilter === '全部' ? '還沒有文章' : '此分類暫無文章'}</div>`;
+        }
+
+        function renderHomeRecent() {
+            const el = document.getElementById('home-recent');
+            const r = articles.slice(0, 3);
+
+            el.innerHTML = r.length
+                ? r.map(a => cardHTML(a, `goPage('blog');setTimeout(()=>openArticle(${a.id}),60)`)).join('')
+                : '<div style="grid-column:1/-1;text-align:center;padding:32px;color:#aaa;font-size:17px">還沒有文章</div>';
+        }
+
+        function openArticle(id) {
+            const a = articles.find(x => x.id === id);
+            if (!a) return;
+
+            const m = catMeta[a.cat] || { bg: '#F1EFE8', dark: '#2C2C2A' };
+
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+            document.getElementById('page-blog').classList.add('active');
+
+            const nl = document.getElementById('nl-blog');
+            if (nl) nl.classList.add('active');
+
+            document.getElementById('art-cat').textContent = a.cat;
+            document.getElementById('art-cat').style.cssText = `background:${m.bg};color:${m.dark}`;
+            document.getElementById('art-title').textContent = a.title;
+            document.getElementById('art-date').textContent = a.date;
+            document.getElementById('art-body').textContent = a.body || '（文章內容為空）';
+
+            document.getElementById('blog-list').style.display = 'none';
+            document.getElementById('art-view').classList.add('active');
+
+            window.scrollTo(0, 0);
+        }
+
+        function backBlog() {
+            document.getElementById('blog-list').style.display = 'block';
+            document.getElementById('art-view').classList.remove('active');
+        }
+
+        loadArticles();
+    </script>
+</body>
+
+</html>
